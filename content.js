@@ -4,12 +4,11 @@ let api = "//api.giphy.com/v1/gifs/trending?" + api_key
 // giphy public api is limited to 25 gifs per get request
 
 let images = document.getElementsByTagName("img")
-console.log(`images length: ${images.length}`)
+// console.log(`images length: ${images.length}`)
 
 chrome.runtime.onMessage.addListener(gotMessage)
 
 function gotMessage(msg, sender, res) {
-    console.log(msg.txt) 
     if (msg.txt==='Giphy-ify All!') {
         fetch(api)
             .then(res => res.json())
