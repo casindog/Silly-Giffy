@@ -13,7 +13,6 @@ function gotMessage(msg, sender, res) {
         fetch(api)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 for (let i = 0; i < images.length; i++) {
                     images[i].src = data.data[i % 25].images.original.url
                 }
